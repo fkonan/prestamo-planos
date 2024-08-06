@@ -5,20 +5,14 @@ import { RadicarComponent } from './public/radicar/radicar.component';
 
 const routes: Routes = [
 	{
-		path: '',
-		component: HomeComponent,
-		pathMatch: 'full',
-	},
-	{
 		path: 'home',
-		component: HomeComponent,
-		pathMatch: 'full',
+		component: HomeComponent,data: { breadcrumb: 'home' }
 	},
 	{
 		path: 'radicar',
 		component: RadicarComponent,
-		pathMatch: 'full',
 	},
+	{ path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

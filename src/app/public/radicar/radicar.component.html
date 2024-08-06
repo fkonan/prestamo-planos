@@ -1,6 +1,212 @@
-<general-miga [items]="breadcrumbItems"></general-miga>
+<h2>Formulario de Solicitud</h2>
+<form>
+	<div class="row">
+		<div class="col-md-4">
+			<!-- Radicado -->
+			<div class="mb-3">
+				<label for="radicado" class="form-label">Radicado</label>
+				<input type="text" class="form-control" id="radicado" placeholder="Ingrese el radicado">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Fecha de Solicitud -->
+			<div class="mb-3">
+				<label for="fecha_solicitud" class="form-label">Fecha de Solicitud</label>
+				<input type="date" class="form-control" id="fecha_solicitud">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Nombre del Solicitante -->
+			<div class="mb-3">
+				<label for="nombre_solicitante" class="form-label">Nombre del Solicitante</label>
+				<input type="text" class="form-control" id="nombre_solicitante" placeholder="Ingrese su nombre">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<!-- Documento de Identificación -->
+			<div class="mb-3">
+				<label for="documento_identificacion" class="form-label">Documento de Identificación</label>
+				<input type="text" class="form-control" id="documento_identificacion"
+					placeholder="Ingrese su documento de identificación">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Dirección del Solicitante -->
+			<div class="mb-3">
+				<label for="direccion_solicitante" class="form-label">Dirección del Solicitante</label>
+				<input type="text" class="form-control" id="direccion_solicitante" placeholder="Ingrese su dirección">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Correo Electrónico -->
+			<div class="mb-3">
+				<label for="correo_electronico" class="form-label">Correo Electrónico</label>
+				<input type="email" class="form-control" id="correo_electronico" placeholder="Ingrese su correo electrónico">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<!-- Teléfono -->
+			<div class="mb-3">
+				<label for="telefono" class="form-label">Teléfono</label>
+				<input type="tel" class="form-control" id="telefono" placeholder="Ingrese su número de teléfono">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Número de Licencia -->
+			<div class="mb-3">
+				<label for="numero_licencia" class="form-label">Número de Licencia</label>
+				<input type="text" class="form-control" id="numero_licencia" placeholder="Ingrese el número de licencia">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Modalidad de Licencia -->
+			<div class="mb-3">
+				<label for="modalidad_licencia" class="form-label">Modalidad de Licencia</label>
+				<input type="text" class="form-control" id="modalidad_licencia" placeholder="Ingrese la modalidad de licencia">
+			</div>
+		</div>
+	</div>
 
-<linea-avance></linea-avance>
+	<div class="row">
+		<div class="col-md-4">
+			<!-- Dirección del Predio -->
+			<div class="mb-3">
+				<label for="direccion_predio" class="form-label">Dirección del Predio</label>
+				<input type="text" class="form-control" id="direccion_predio" placeholder="Ingrese la dirección del predio">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Barrio -->
+			<div class="mb-3">
+				<label for="barrio" class="form-label">Barrio</label>
+				<input type="text" class="form-control" id="barrio" placeholder="Ingrese el barrio">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Número de Folio de Matrícula Inmobiliaria -->
+			<div class="mb-3">
+				<label for="numero_folio_matricula_inmobiliaria" class="form-label">Número de Folio de Matrícula
+					Inmobiliaria</label>
+				<input type="text" class="form-control" id="numero_folio_matricula_inmobiliaria"
+					placeholder="Ingrese el número de folio de matrícula inmobiliaria">
+			</div>
+		</div>
+	</div>
 
-<titulo-tramite [title]="titulo" [subtitle]="subitulo|titlecase"></titulo-tramite>
+	<div class="row">
+		<div class="col-md-4">
+			<!-- Propietario del Predio -->
+			<div class="mb-3">
+				<label for="propietario_predio" class="form-label">Propietario del Predio</label>
+				<input type="text" class="form-control" id="propietario_predio" placeholder="Ingrese el nombre del propietario">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Nombre del Constructor -->
+			<div class="mb-3">
+				<label for="nombre_constructor" class="form-label">Nombre del Constructor</label>
+				<input type="text" class="form-control" id="nombre_constructor" placeholder="Ingrese el nombre del constructor">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Fecha Aproximada de Documentación -->
+			<div class="mb-3">
+				<label for="fecha_aproximada_documentacion" class="form-label">Fecha Aproximada de Documentación</label>
+				<input type="date" class="form-control" id="fecha_aproximada_documentacion">
+			</div>
+		</div>
+	</div>
 
+
+
+	<div class="row">
+		<div class="col-md-4">
+			<!-- Documentos Requeridos -->
+			<div class="mb-3">
+				<label for="documentos_requeridos" class="form-label">Documentos Requeridos</label>
+				<textarea class="form-control" id="documentos_requeridos" rows="3"
+					placeholder="Ingrese los documentos requeridos"></textarea>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Motivo de Destinación -->
+			<div class="mb-3">
+				<label for="motivo_destinacion" class="form-label">Motivo de Destinación</label>
+				<textarea class="form-control" id="motivo_destinacion" rows="3"
+					placeholder="Ingrese el motivo de destinación"></textarea>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Observaciones -->
+			<div class="mb-3">
+				<label for="observaciones" class="form-label">Observaciones</label>
+				<textarea class="form-control" id="observaciones" rows="3" placeholder="Ingrese observaciones"></textarea>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="row">
+		<div class="col-md-4">
+			<!-- Estado de Solicitud -->
+			<div class="mb-3">
+				<label for="estado_solicitud" class="form-label">Estado de Solicitud</label>
+				<input type="text" class="form-control" id="estado_solicitud" placeholder="Ingrese el estado de solicitud">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Documento Certificado Libertad -->
+			<div class="mb-3">
+				<label for="documento_certificado_libertad" class="form-label">Documento Certificado Libertad</label>
+				<input type="file" class="form-control" id="documento_certificado_libertad">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Documento No Encontrado -->
+			<div class="mb-3">
+				<label for="documento_no_encontrado" class="form-label">Documento No Encontrado</label>
+				<input type="file" class="form-control" id="documento_no_encontrado">
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-4">
+			<!-- Acepta Términos -->
+			<div class="mb-3 form-check">
+				<input type="checkbox" class="form-check-input" id="acepta_terminos">
+				<label class="form-check-label" for="acepta_terminos">Acepta términos y condiciones</label>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Autoriza Notificación -->
+			<div class="mb-3 form-check">
+				<input type="checkbox" class="form-check-input" id="autoriza_notificacion">
+				<label class="form-check-label" for="autoriza_notificacion">Autoriza notificación</label>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- Fecha de Aprobación -->
+			<div class="mb-3">
+				<label for="fecha_aprobacion" class="form-label">Fecha de Aprobación</label>
+				<input type="date" class="form-control" id="fecha_aprobacion">
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-around">
+		<div class="col text-start">
+			<button type="button" class="btn btn-secondary" (click)="back()">Atras</button>
+
+		</div>
+		<div class="col text-end">
+			<button type="submit" class="btn btn-primary">Enviar</button>
+
+		</div>
+	</div>
+</form>

@@ -1,27 +1,23 @@
 import { Component, OnInit, signal, Signal } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { BreadcrumbService } from './shared/services/breadcrumb.services';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  constructor(private primeNgConfig: PrimeNGConfig) {}
+	constructor(
+		private primeNgConfig: PrimeNGConfig,
+		private breadcrumbService: BreadcrumbService,
+	) {}
 
-  ngOnInit(): void {
-    this.primeNgConfig.ripple = true;
-
-    // // Establecer los pasos iniciales por defecto
-    // const pasos: PasosItems[] = [
-    //   { label: 'Inicio', porcentaje: 15 },
-    //   { label: 'Hago mi solicitud', porcentaje: 50 },
-    //   { label: 'En proceso', porcentaje: 80 },
-    //   { label: 'Respuesta', porcentaje: 100 }
-    // ];
-
-    // this.lineaAvanceService.setPasos(pasos);
-  }
-
-  title = 'Prestamo de planos';
+	ngOnInit(): void {
+		this.primeNgConfig.ripple = true;
+		this.breadcrumbService.setBreadcrumbs([
+			{ label: 'Inicio', url: 'https://www.bucaramanga.gov.co/' },
+			{ label: 'Prestamo de planos' },
+		]);
+	}
 }

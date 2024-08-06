@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { StepperService } from '../../shared/services/stepper.service';
 
 @Component({
-  selector: 'field-buttons',
-  templateUrl: './buttons.component.html',
-  styleUrl: './buttons.component.css',
+	selector: 'field-buttons',
+	templateUrl: './buttons.component.html',
+	styleUrl: './buttons.component.css',
 })
 export class ButtonsComponent {
+	constructor(private router: Router, private stepperService: StepperService) {}
 
-  constructor(
-    private router: Router,
-  ) {}
-
-  radicar(): void {
-    this.router.navigateByUrl('radicar');
-  }
+	radicar(): void {
+		this.stepperService.advance();
+	}
 }

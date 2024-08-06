@@ -1,61 +1,60 @@
 import { Injectable, signal, Signal } from '@angular/core';
-
-interface Step {
-  label: string;
-  percentage: number;
-  route: string;
-}
+import { Step } from '../interfaces/step.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root',
 })
 export class StepperService {
-  private steps: Step[] = [
-    { label: 'Inicio', percentage: 15, route: '/inicio' },
-    { label: 'Hago mi solicitud', percentage: 50, route: '/solicitud' },
-    { label: 'En proceso', percentage: 80, route: '/proceso' },
-    { label: 'Respuesta', percentage: 100, route: '/respuesta' },
-  ];
+	private steps: Step[] = [
+		{ label: 'Inicio', percentage: 15, route: '/home' },
+		{ label: 'Hago mi solicitud', percentage: 50, route: '/radicar' },
+		{ label: 'En proceso', percentage: 80, route: '/proceso' },
+		{ label: 'Respuesta', percentage: 100, route: '/respuesta' },
+	];
 
-  private currentStepIndex = signal(this.loadCurrentStepIndex());
+	private currentStepIndex = signal(this.loadCurrentStepIndex());
 
-  private loadCurrentStepIndex(): number {
-    const savedStepIndex = localStorage.getItem('currentStepIndex');
-    return savedStepIndex ? parseInt(savedStepIndex, 10) : 0;
-  }
+	constructor(private router: Router) {}
 
-  private saveCurrentStepIndex(index: number) {
-    localStorage.setItem('currentStepIndex', index.toString());
-  }
+	private loadCurrentStepIndex(): number {
+		const savedStepIndex = localStorage.getItem('currentStepIndex');
+		return savedStepIndex ? parseInt(savedStepIndex, 10) : 0;
+	}
 
-  getSteps(): Step[] {
-    return this.steps;
-  }
+	private saveCurrentStepIndex(index: number) {
+		localStorage.setItem('currentStepIndex', index.toString());
+	}
 
-  getCurrentStepIndex(): Signal<number> {
-    return this.currentStepIndex;
-  }
+	getSteps(): Step[] {
+		return this.steps;
+	}
 
-  setStep(index: number) {
-    if (index >= 0 && index < this.steps.length) {
-      this.currentStepIndex.set(index);
-      this.saveCurrentStepIndex(index);
-    }
-  }
+	getCurrentStepIndex(): Signal<number> {
+		return this.currentStepIndex;
+	}
 
-  advance() {
-    if (this.currentStepIndex() < this.steps.length - 1) {
-      this.setStep(this.currentStepIndex() + 1);
-    }
-  }
+	setStep(index: number) {
+		if (index >= 0 && index < this.steps.length) {
+			this.currentStepIndex.set(index);
+			this.saveCurrentStepIndex(index);
+			this.router.navigate([this.getCurrentRoute()]);
+		}
+	}
 
-  back() {
-    if (this.currentStepIndex() > 0) {
-      this.setStep(this.currentStepIndex() - 1);
-    }
-  }
+	advance() {
+		if (this.currentStepIndex() < this.steps.length - 1) {
+			this.setStep(this.currentStepIndex() + 1);
+		}
+	}
 
-  getCurrentRoute(): string {
-    return this.steps[this.currentStepIndex()].route;
-  }
+	back() {
+		if (this.currentStepIndex() > 0) {
+			this.setStep(this.currentStepIndex() - 1);
+		}
+	}
+
+	getCurrentRoute(): string {
+		return this.steps[this.currentStepIndex()].route;
+	}
 }

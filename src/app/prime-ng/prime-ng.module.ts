@@ -11,26 +11,16 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 
 
 
-
-
-
-
-
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ],
-  exports:[
-    MenuModule,
-    MenubarModule,
-    CardModule,
-    FieldsetModule,
-    AvatarGroupModule,
-    AvatarModule
-
-
-
-  ]
+	declarations: [],
+	imports: [CommonModule],
+	exports: [
+		MenuModule,
+		MenubarModule,
+		CardModule,
+		FieldsetModule,
+		AvatarGroupModule,
+		AvatarModule,
+	],
 })
-export class PrimeNgModule { }
+export class PrimeNgModule {}
