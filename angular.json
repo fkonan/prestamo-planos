@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "concepto-sanitario": {
+    "prestamo-planos": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/concepto-sanitario",
+            "outputPath": "dist/prestamo-planos",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "concepto-sanitario:build:production"
+              "buildTarget": "prestamo-planos:build:production"
             },
             "development": {
-              "buildTarget": "concepto-sanitario:build:development"
+              "buildTarget": "prestamo-planos:build:development"
             }
           },
           "defaultConfiguration": "development"
