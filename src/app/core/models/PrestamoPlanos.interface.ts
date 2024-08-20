@@ -1,4 +1,4 @@
-export interface Establecimiento {
+export interface PrestamoPlanos {
   id: number;
   radicado: string | number;
   fecha_solicitud: Date;
@@ -28,7 +28,7 @@ export interface Establecimiento {
   updated_at: Date;
 }
 
-enum EstadoSolicitud {
+export enum EstadoSolicitud {
   'RADICADO'='RADICADO',
   'EN TRAMITE'='EN TRAMITE',
   'NO ENCONTRADO'='NO ENCONTRADO',
@@ -38,7 +38,7 @@ enum EstadoSolicitud {
   'FINALIZAD'='FINALIZADO'
 }
 
-enum AceptaTyN {
+export enum AceptaTyN {
   'SI' = 'SI',
   'NO' = 'NO',
 }

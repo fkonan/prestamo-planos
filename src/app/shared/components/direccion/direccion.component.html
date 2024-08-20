@@ -1,0 +1,83 @@
+<p-dialog [modal]="true" header="Ingresar dirección" [(visible)]="visible" [style]="{ width: '50rem' }"
+	[closable]="false">
+
+	<form [formGroup]="direccionForm">
+		<div class="row">
+			<div class="col-md-5 mb-3">
+				<label for="calle_carrera" class="form-label">Calle - carrera</label>
+				<select formControlName="calle_carrera" class="form-select">
+					@for (item of this.calle_carrera; track $index) {
+					<option value="{{ item }}">{{ item }}</option>
+					}
+				</select>
+			</div>
+
+			<div class="col-md-3 mb-3">
+				<label for="nombre" class="form-label">Nombre</label>
+				<input type="text" formControlName="nombre" class="form-control">
+			</div>
+
+			<div class="col-md-2 mb-3">
+				<label for="letra1" class="form-label">Letra</label>
+				<select formControlName="letra1" class="form-select">
+					<option value="">Seleccione</option>
+					@for (item of this.letras; track $index) {
+					<option value="{{ item }}">{{ item }}</option>
+					}
+				</select>
+			</div>
+
+			<div class="col-md-2 mb-3">
+				<label for="numero1" class="form-label">Número</label>
+				<input type="text" formControlName="numero1" class="form-control">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-2 mb-3">
+				<label for="letra2" class="form-label">Letra</label>
+				<select formControlName="letra2" class="form-select">
+					<option value="">Seleccione</option>
+					@for (item of this.letras; track $index) {
+					<option value="{{ item }}">{{ item }}</option>
+					}
+				</select>
+			</div>
+
+			<div class="col-md-2 mb-3">
+				<label for="numero2" class="form-label">Número</label>
+				<input type="text" formControlName="numero2" class="form-control">
+			</div>
+
+			<div class="col-md-2 mb-3">
+				<label for="letra3" class="form-label">Letra</label>
+				<select formControlName="letra3" class="form-select">
+					<option value="">Seleccione</option>
+					@for (item of this.letras; track $index) {
+					<option value="{{ item }}">{{ item }}</option>
+					}
+				</select>
+			</div>
+
+			<div class="col-md-6 mb-3">
+				<label for="complemento" class="form-label">Complemento</label>
+				<input type="text" formControlName="complemento" class="form-control">
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-12 mb-3">
+				<label class="form-label">Previsualizar Dirección</label>
+				<p>{{ concatenatedAddress }}</p>
+			</div>
+		</div>
+	</form>
+<div class="row">
+	<div class="col-auto">
+		<button type="button" class="btn btn-primary" (click)="saveDireccion()">Guardar Dirección</button>
+	</div>
+	<div class="col-auto">
+		<button type="button" class="btn btn-secondary" (click)="closeDireccionModal()">Limpiar y cerrar</button>
+	</div>
+</div>
+</p-dialog>

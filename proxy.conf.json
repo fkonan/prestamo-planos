@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://tramitesenlinea.bucaramanga.gov.co",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

@@ -9,6 +9,8 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { RadicarComponent } from './radicar/radicar.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
 	declarations: [
@@ -18,6 +20,13 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 		InformacionComponent,
 		RadicarComponent,
 	],
-	imports: [CommonModule, RouterModule, SharedModule, PrimeNgModule],
+	imports: [
+		CommonModule,
+		RouterModule,
+		SharedModule,
+		PrimeNgModule,
+		ReactiveFormsModule,
+
+	],
 })
 export class PublicModule {}

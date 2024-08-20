@@ -35,6 +35,7 @@ export class StepperService {
 	}
 
 	setStep(index: number) {
+		console.log(index)
 		if (index >= 0 && index < this.steps.length) {
 			this.currentStepIndex.set(index);
 			this.saveCurrentStepIndex(index);

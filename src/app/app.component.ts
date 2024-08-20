@@ -1,6 +1,6 @@
 import { Component, OnInit, signal, Signal } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { BreadcrumbService } from './shared/services/breadcrumb.services';
+import { BreadcrumbService } from './shared/services/breadcrumb.service';
 
 @Component({
 	selector: 'app-root',

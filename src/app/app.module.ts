@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 
 //cambiar el local de la app
 import localeEs from '@angular/common/locales/es-CO';
-import {registerLocaleData} from '@angular/common'
+import { registerLocaleData } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { PublicModule } from './public/public.module';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 registerLocaleData(localeEs);
 
@@ -19,10 +20,15 @@ registerLocaleData(localeEs);
 		BrowserModule,
 		BrowserAnimationsModule,
 		AppRoutingModule,
+
 		SharedModule,
-		PublicModule
+		PublicModule,
 	],
-	providers: [{ provide: LOCALE_ID, useValue: 'es-CO' }],
+	providers: [
+		{ provide: LOCALE_ID, useValue: 'es-CO' },
+		provideHttpClient(withInterceptorsFromDi()),
+
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
